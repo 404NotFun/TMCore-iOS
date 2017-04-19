@@ -10,6 +10,28 @@
 		3CBC0F111EA7C21C00454B8B /* TMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBC0F071EA7C21C00454B8B /* TMCore.framework */; };
 		3CBC0F161EA7C21C00454B8B /* TMCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F151EA7C21C00454B8B /* TMCoreTests.swift */; };
 		3CBC0F181EA7C21C00454B8B /* TMCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CBC0F0A1EA7C21C00454B8B /* TMCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CBC0F5E1EA7C7EC00454B8B /* TMCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F5D1EA7C7EC00454B8B /* TMCore.swift */; };
+		3CBC0F601EA7CDE900454B8B /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F5F1EA7CDE900454B8B /* enums.swift */; };
+		3CBC0F621EA7CF2800454B8B /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F611EA7CF2800454B8B /* extensions.swift */; };
+		3CBC0F641EA7D1BE00454B8B /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F631EA7D1BE00454B8B /* constants.swift */; };
+		3CBC0F7D1EA7D39500454B8B /* ESRefreshFooterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F681EA7D39500454B8B /* ESRefreshFooterAnimator.swift */; };
+		3CBC0F7E1EA7D39500454B8B /* ESRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F691EA7D39500454B8B /* ESRefreshHeaderAnimator.swift */; };
+		3CBC0F7F1EA7D39500454B8B /* icon_pull_to_refresh_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CBC0F6A1EA7D39500454B8B /* icon_pull_to_refresh_arrow@2x.png */; };
+		3CBC0F801EA7D39500454B8B /* ESPullToRefresh+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F6B1EA7D39500454B8B /* ESPullToRefresh+Manager.swift */; };
+		3CBC0F811EA7D39500454B8B /* ESPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F6C1EA7D39500454B8B /* ESPullToRefresh.swift */; };
+		3CBC0F821EA7D39500454B8B /* ESRefreshAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F6D1EA7D39500454B8B /* ESRefreshAnimator.swift */; };
+		3CBC0F831EA7D39500454B8B /* ESRefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F6E1EA7D39500454B8B /* ESRefreshComponent.swift */; };
+		3CBC0F841EA7D39500454B8B /* ESRefreshProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F6F1EA7D39500454B8B /* ESRefreshProtocol.swift */; };
+		3CBC0F851EA7D39500454B8B /* Navajo.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CBC0F711EA7D39500454B8B /* Navajo.h */; };
+		3CBC0F861EA7D39500454B8B /* Navajo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F721EA7D39500454B8B /* Navajo.swift */; };
+		3CBC0F871EA7D39500454B8B /* NJOPasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F731EA7D39500454B8B /* NJOPasswordRule.swift */; };
+		3CBC0F881EA7D39500454B8B /* NJOPasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F741EA7D39500454B8B /* NJOPasswordValidator.swift */; };
+		3CBC0F891EA7D39500454B8B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F761EA7D39500454B8B /* NetworkingManager.swift */; };
+		3CBC0F8A1EA7D39500454B8B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F771EA7D39500454B8B /* Reachability.swift */; };
+		3CBC0F8B1EA7D39500454B8B /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F791EA7D39500454B8B /* SCLAlertView.swift */; };
+		3CBC0F8C1EA7D39500454B8B /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F7A1EA7D39500454B8B /* SCLExtensions.swift */; };
+		3CBC0F8D1EA7D39500454B8B /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F7C1EA7D39500454B8B /* SweetAlert.swift */; };
+		3CBC0FA81EA7D54D00454B8B /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBC0FA71EA7D54D00454B8B /* SVProgressHUD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +51,28 @@
 		3CBC0F101EA7C21C00454B8B /* TMCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CBC0F151EA7C21C00454B8B /* TMCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCoreTests.swift; sourceTree = "<group>"; };
 		3CBC0F171EA7C21C00454B8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CBC0F5D1EA7C7EC00454B8B /* TMCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMCore.swift; sourceTree = "<group>"; };
+		3CBC0F5F1EA7CDE900454B8B /* enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
+		3CBC0F611EA7CF2800454B8B /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		3CBC0F631EA7D1BE00454B8B /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		3CBC0F681EA7D39500454B8B /* ESRefreshFooterAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshFooterAnimator.swift; sourceTree = "<group>"; };
+		3CBC0F691EA7D39500454B8B /* ESRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
+		3CBC0F6A1EA7D39500454B8B /* icon_pull_to_refresh_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_pull_to_refresh_arrow@2x.png"; sourceTree = "<group>"; };
+		3CBC0F6B1EA7D39500454B8B /* ESPullToRefresh+Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ESPullToRefresh+Manager.swift"; sourceTree = "<group>"; };
+		3CBC0F6C1EA7D39500454B8B /* ESPullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESPullToRefresh.swift; sourceTree = "<group>"; };
+		3CBC0F6D1EA7D39500454B8B /* ESRefreshAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshAnimator.swift; sourceTree = "<group>"; };
+		3CBC0F6E1EA7D39500454B8B /* ESRefreshComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshComponent.swift; sourceTree = "<group>"; };
+		3CBC0F6F1EA7D39500454B8B /* ESRefreshProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshProtocol.swift; sourceTree = "<group>"; };
+		3CBC0F711EA7D39500454B8B /* Navajo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navajo.h; sourceTree = "<group>"; };
+		3CBC0F721EA7D39500454B8B /* Navajo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navajo.swift; sourceTree = "<group>"; };
+		3CBC0F731EA7D39500454B8B /* NJOPasswordRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NJOPasswordRule.swift; sourceTree = "<group>"; };
+		3CBC0F741EA7D39500454B8B /* NJOPasswordValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NJOPasswordValidator.swift; sourceTree = "<group>"; };
+		3CBC0F761EA7D39500454B8B /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		3CBC0F771EA7D39500454B8B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		3CBC0F791EA7D39500454B8B /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		3CBC0F7A1EA7D39500454B8B /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
+		3CBC0F7C1EA7D39500454B8B /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		3CBC0FA71EA7D54D00454B8B /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "/Users/jasontsai/Desktop/0_YomApps/TMTemplate/Pods/../build/Debug-iphoneos/SVProgressHUD.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CBC0FA81EA7D54D00454B8B /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +101,7 @@
 				3CBC0F091EA7C21C00454B8B /* TMCore */,
 				3CBC0F141EA7C21C00454B8B /* TMCoreTests */,
 				3CBC0F081EA7C21C00454B8B /* Products */,
+				3CBC0FA61EA7D54D00454B8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +117,13 @@
 		3CBC0F091EA7C21C00454B8B /* TMCore */ = {
 			isa = PBXGroup;
 			children = (
+				3CBC0F651EA7D39500454B8B /* ThirdParties */,
 				3CBC0F0A1EA7C21C00454B8B /* TMCore.h */,
 				3CBC0F0B1EA7C21C00454B8B /* Info.plist */,
+				3CBC0F5D1EA7C7EC00454B8B /* TMCore.swift */,
+				3CBC0F5F1EA7CDE900454B8B /* enums.swift */,
+				3CBC0F611EA7CF2800454B8B /* extensions.swift */,
+				3CBC0F631EA7D1BE00454B8B /* constants.swift */,
 			);
 			path = TMCore;
 			sourceTree = "<group>";
@@ -86,6 +137,86 @@
 			path = TMCoreTests;
 			sourceTree = "<group>";
 		};
+		3CBC0F651EA7D39500454B8B /* ThirdParties */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC0F661EA7D39500454B8B /* ESPullToRefresh */,
+				3CBC0F701EA7D39500454B8B /* Navajo */,
+				3CBC0F751EA7D39500454B8B /* Reachability */,
+				3CBC0F781EA7D39500454B8B /* SCLAlertView */,
+				3CBC0F7B1EA7D39500454B8B /* SweetAlert */,
+			);
+			path = ThirdParties;
+			sourceTree = "<group>";
+		};
+		3CBC0F661EA7D39500454B8B /* ESPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC0F671EA7D39500454B8B /* Animator */,
+				3CBC0F6B1EA7D39500454B8B /* ESPullToRefresh+Manager.swift */,
+				3CBC0F6C1EA7D39500454B8B /* ESPullToRefresh.swift */,
+				3CBC0F6D1EA7D39500454B8B /* ESRefreshAnimator.swift */,
+				3CBC0F6E1EA7D39500454B8B /* ESRefreshComponent.swift */,
+				3CBC0F6F1EA7D39500454B8B /* ESRefreshProtocol.swift */,
+			);
+			path = ESPullToRefresh;
+			sourceTree = "<group>";
+		};
+		3CBC0F671EA7D39500454B8B /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC0F681EA7D39500454B8B /* ESRefreshFooterAnimator.swift */,
+				3CBC0F691EA7D39500454B8B /* ESRefreshHeaderAnimator.swift */,
+				3CBC0F6A1EA7D39500454B8B /* icon_pull_to_refresh_arrow@2x.png */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		3CBC0F701EA7D39500454B8B /* Navajo */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC0F711EA7D39500454B8B /* Navajo.h */,
+				3CBC0F721EA7D39500454B8B /* Navajo.swift */,
+				3CBC0F731EA7D39500454B8B /* NJOPasswordRule.swift */,
+				3CBC0F741EA7D39500454B8B /* NJOPasswordValidator.swift */,
+			);
+			path = Navajo;
+			sourceTree = "<group>";
+		};
+		3CBC0F751EA7D39500454B8B /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC0F761EA7D39500454B8B /* NetworkingManager.swift */,
+				3CBC0F771EA7D39500454B8B /* Reachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		3CBC0F781EA7D39500454B8B /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC0F791EA7D39500454B8B /* SCLAlertView.swift */,
+				3CBC0F7A1EA7D39500454B8B /* SCLExtensions.swift */,
+			);
+			path = SCLAlertView;
+			sourceTree = "<group>";
+		};
+		3CBC0F7B1EA7D39500454B8B /* SweetAlert */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC0F7C1EA7D39500454B8B /* SweetAlert.swift */,
+			);
+			path = SweetAlert;
+			sourceTree = "<group>";
+		};
+		3CBC0FA61EA7D54D00454B8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC0FA71EA7D54D00454B8B /* SVProgressHUD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -94,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CBC0F181EA7C21C00454B8B /* TMCore.h in Headers */,
+				3CBC0F851EA7D39500454B8B /* Navajo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +281,7 @@
 					3CBC0F061EA7C21C00454B8B = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = L9NJSH4CZ8;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					3CBC0F0F1EA7C21C00454B8B = {
@@ -181,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CBC0F7F1EA7D39500454B8B /* icon_pull_to_refresh_arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +332,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CBC0F871EA7D39500454B8B /* NJOPasswordRule.swift in Sources */,
+				3CBC0F601EA7CDE900454B8B /* enums.swift in Sources */,
+				3CBC0F5E1EA7C7EC00454B8B /* TMCore.swift in Sources */,
+				3CBC0F891EA7D39500454B8B /* NetworkingManager.swift in Sources */,
+				3CBC0F621EA7CF2800454B8B /* extensions.swift in Sources */,
+				3CBC0F831EA7D39500454B8B /* ESRefreshComponent.swift in Sources */,
+				3CBC0F821EA7D39500454B8B /* ESRefreshAnimator.swift in Sources */,
+				3CBC0F7D1EA7D39500454B8B /* ESRefreshFooterAnimator.swift in Sources */,
+				3CBC0F801EA7D39500454B8B /* ESPullToRefresh+Manager.swift in Sources */,
+				3CBC0F641EA7D1BE00454B8B /* constants.swift in Sources */,
+				3CBC0F841EA7D39500454B8B /* ESRefreshProtocol.swift in Sources */,
+				3CBC0F7E1EA7D39500454B8B /* ESRefreshHeaderAnimator.swift in Sources */,
+				3CBC0F8C1EA7D39500454B8B /* SCLExtensions.swift in Sources */,
+				3CBC0F8B1EA7D39500454B8B /* SCLAlertView.swift in Sources */,
+				3CBC0F881EA7D39500454B8B /* NJOPasswordValidator.swift in Sources */,
+				3CBC0F861EA7D39500454B8B /* Navajo.swift in Sources */,
+				3CBC0F8A1EA7D39500454B8B /* Reachability.swift in Sources */,
+				3CBC0F8D1EA7D39500454B8B /* SweetAlert.swift in Sources */,
+				3CBC0F811EA7D39500454B8B /* ESPullToRefresh.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +475,7 @@
 		3CBC0F1C1EA7C21C00454B8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L9NJSH4CZ8;
@@ -334,6 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.yomstudio.TMCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +496,7 @@
 		3CBC0F1D1EA7C21C00454B8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L9NJSH4CZ8;
@@ -360,6 +516,7 @@
 		3CBC0F1F1EA7C21C00454B8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = L9NJSH4CZ8;
 				INFOPLIST_FILE = TMCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +529,7 @@
 		3CBC0F201EA7C21C00454B8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = L9NJSH4CZ8;
 				INFOPLIST_FILE = TMCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -400,6 +558,7 @@
 				3CBC0F1D1EA7C21C00454B8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3CBC0F1E1EA7C21C00454B8B /* Build configuration list for PBXNativeTarget "TMCoreTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +567,7 @@
 				3CBC0F201EA7C21C00454B8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
