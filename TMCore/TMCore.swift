@@ -9,27 +9,27 @@
 import Foundation
 import SVProgressHUD
 
-class TMCore {
-    static let shared = TMCore()
+public class TMCore {
+    public static let shared = TMCore()
     var currentAppVersion: String!
     var currentAppStoreVersion: String!
     
 // MARK: - 轉換 Converter
     // 數字陣列轉字串
-    func converter(intAry: [Int], separater: String) -> String {
+    public func converter(intAry: [Int], separater: String) -> String {
         return NSMutableArray(array: intAry).componentsJoined(by: separater)
     }
     // 字串轉數字陣列
-    func converter(string: String) -> [Int] {
+    public func converter(string: String) -> [Int] {
         let tempAry = string.characters.split{$0 == ","}.map(String.init)
         return tempAry.map{Int($0)!}
     }
     // 字串陣列轉字串
-    func converter(stringAry: [String], separater: String) -> String {
+    public func converter(stringAry: [String], separater: String) -> String {
         return NSMutableArray(array: stringAry).componentsJoined(by: separater)
     }
     // 時間轉字串
-    func converter(_ date: Date, formatterStr: String)->String {
+    public func converter(_ date: Date, formatterStr: String)->String {
         var outputStr = ""
         let formatter = DateFormatter()
         formatter.dateFormat = formatterStr
@@ -38,7 +38,7 @@ class TMCore {
         return outputStr
     }
     // 字串轉時間
-    func converter(_ dateString: String, formatterStr: String)->Date {
+    public func converter(_ dateString: String, formatterStr: String)->Date {
         var outputDate = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = formatterStr
@@ -49,12 +49,12 @@ class TMCore {
     
 // MARK: - 字串
     // Email格式是否正確
-    func validation(email:String) -> Bool {
+    public func validation(email:String) -> Bool {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}")
         return emailTest.evaluate(with: email)
     }
     // 密碼是否合法
-    func validation(password: String, lengthLimitation: (Int,Int), isUppercase: Bool) -> (success: Bool, error: String) {
+    public func validation(password: String, lengthLimitation: (Int,Int), isUppercase: Bool) -> (success: Bool, error: String) {
         let lengthRule = NJOLengthRule(min: lengthLimitation.0, max: lengthLimitation.1)
         let allowedCharacters = NJOAllowedCharacterRule.init(characterSet: .alphanumerics)
         let uppercaseRule = NJORequiredCharacterRule(preset: isUppercase ? .uppercaseCharacter : .lowercaseCharacter)
@@ -75,7 +75,7 @@ class TMCore {
         return (success, error)
     }
     // 帳號是否合法
-    func validation(account: String, lengthLimitation: (Int,Int), isUppercase: Bool) -> (success: Bool, error: String) {
+    public func validation(account: String, lengthLimitation: (Int,Int), isUppercase: Bool) -> (success: Bool, error: String) {
         let lengthRule = NJOLengthRule(min: lengthLimitation.0, max: lengthLimitation.1)
         let allowedCharacters = NJOAllowedCharacterRule.init(characterSet: .alphanumerics)
         let validator = NJOPasswordValidator(rules: [lengthRule, allowedCharacters])
@@ -95,7 +95,7 @@ class TMCore {
         return (success, error)
     }
     // 帳號密碼核查
-    func validation(account: String, pwd: String) -> Bool {
+    public func validation(account: String, pwd: String) -> Bool {
         if account == "" || pwd == "" {
             _ = SweetAlert().showAlert("錯誤提示", subTitle: "請輸入帳號/密碼", style: AlertStyle.error, buttonTitle: "OK")
             return false
@@ -114,7 +114,7 @@ class TMCore {
         return true
     }
     // 隨機英數字串
-    func randomAlphaNumeric(length: Int) -> String {
+    public func randomAlphaNumeric(length: Int) -> String {
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = UInt32(letters.length)
         var randomString = ""
@@ -128,7 +128,7 @@ class TMCore {
     
 // MARK: - 畫面 View
     // 取得中心點
-    func getCenter(_ view: UIView) -> CGPoint {
+    public func getCenter(_ view: UIView) -> CGPoint {
         var center: CGPoint = CGPoint(x: 0,y: 0)
         center.x = view.frame.origin.x + view.frame.size.width/2
         center.y = view.frame.origin.y + view.frame.size.height/2
@@ -136,7 +136,7 @@ class TMCore {
         return center
     }
     // 取得最上層的View
-    func getToppestWindowView() -> UIView? {
+    public func getToppestWindowView() -> UIView? {
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
@@ -149,7 +149,7 @@ class TMCore {
     
 // MARK: - 畫面: 事件動作 Action
     // 使UIView可點擊
-    func makeClickable(_ view: UIView, target: Any, selector:Selector) {
+    public func makeClickable(_ view: UIView, target: Any, selector:Selector) {
         let tap = UITapGestureRecognizer(target: target, action: selector)
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(tap)
@@ -157,28 +157,28 @@ class TMCore {
     
 // MARK: - 畫面: 特效
     // 增加陰影
-    func addShadow(_ view: UIView, radius: CGFloat) {
+    public func addShadow(_ view: UIView, radius: CGFloat) {
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = CGSize.zero
         view.layer.shadowRadius = radius
     }
     // 增加陰影(with offset)
-    func addShadow(_ view: UIView, radius: CGFloat, offset: CGSize) {
+    public func addShadow(_ view: UIView, radius: CGFloat, offset: CGSize) {
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOffset = offset
         view.layer.shadowOpacity = 0.5
         view.layer.shadowRadius = radius //Here your control your blur
     }
     // 增加陰影(指定顏色)
-    func addShadow(_ view: UIView, radius: CGFloat, color: CGColor) {
+    public func addShadow(_ view: UIView, radius: CGFloat, color: CGColor) {
         view.layer.shadowColor = color
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = CGSize.zero
         view.layer.shadowRadius = radius
     }
     // 產生圓角(有陰影)
-    func makeRoundEdge(_ view: UIView, radius: CGFloat, withShadowRadius shadowRadius: CGFloat) {
+    public func makeRoundEdge(_ view: UIView, radius: CGFloat, withShadowRadius shadowRadius: CGFloat) {
         view.layer.cornerRadius = radius
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOffset = CGSize.init(width: 0.5, height: 0.5)
@@ -186,24 +186,24 @@ class TMCore {
         view.layer.shadowRadius = shadowRadius //Here your control your blur
     }
     // 製作圓形
-    func makeCircle(_ view: UIView) {
+    public func makeCircle(_ view: UIView) {
         view.layer.cornerRadius = view.frame.size.width/2
         view.layer.masksToBounds = true
     }
     // 產生圓角
-    func makeRoundEdge(_ view: UIView, radius: CGFloat) {
+    public func makeRoundEdge(_ view: UIView, radius: CGFloat) {
         view.layer.cornerRadius = radius
         view.layer.masksToBounds = true
     }
     //製作邊匡+圓角
-    func makeBorderWithRoundEdge(_ view: UIView, radius:CGFloat, borderWidth: CGFloat, borderColor: CGColor) {
+    public func makeBorderWithRoundEdge(_ view: UIView, radius:CGFloat, borderWidth: CGFloat, borderColor: CGColor) {
         view.layer.borderColor = borderColor
         view.layer.borderWidth = borderWidth
         view.layer.cornerRadius = radius
         view.layer.masksToBounds = true
     }
     // 製作邊筐(顏色)
-    func makeBorder(_ view: UIView, borderWidth: CGFloat, borderColor: CGColor) {
+    public func makeBorder(_ view: UIView, borderWidth: CGFloat, borderColor: CGColor) {
         view.layer.borderColor = borderColor
         view.layer.borderWidth = borderWidth
         view.layer.masksToBounds = true
@@ -216,7 +216,7 @@ class TMCore {
     /// - Parameters:
     ///   - aView: 要顯示的View
     ///   - basicView: 基底的View
-    func animationShowFromHidden(_ aView: UIView, basicView: UIView) {
+    public func animationShowFromHidden(_ aView: UIView, basicView: UIView) {
         aView.isHidden = false
         aView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         aView.alpha = 0.0;
@@ -232,7 +232,7 @@ class TMCore {
     ///   - aView: 要顯示的View
     ///   - basicView: 基底的View
     ///   - duration: 顯示時間
-    func animationShowFromHidden(_ aView: UIView, basicView: UIView, duration: TimeInterval) {
+    public func animationShowFromHidden(_ aView: UIView, basicView: UIView, duration: TimeInterval) {
         basicView.addSubview(aView)
         aView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         aView.alpha = 0.0;
@@ -247,7 +247,7 @@ class TMCore {
     /// - Parameters:
     ///   - aView: 要隱藏的View
     ///   - duration: 時間區間
-    func animationHidden(_ aView: UIView, duration: TimeInterval) {
+    public func animationHidden(_ aView: UIView, duration: TimeInterval) {
         UIView.animate(withDuration: duration, animations: {
             aView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             aView.alpha = 0.0;
@@ -264,7 +264,7 @@ class TMCore {
     /// - Parameters:
     ///   - aView: 要移除的View
     ///   - duration: 時間區間
-    func animationRemoved(_ aView: UIView, duration: TimeInterval) {
+    public func animationRemoved(_ aView: UIView, duration: TimeInterval) {
         UIView.animate(withDuration: duration, animations: {
             aView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             aView.alpha = 0.0;
@@ -278,7 +278,7 @@ class TMCore {
     
 //MARK: - 時間
     // 計算時間差
-    func calculateTimeGap(timeA: Date, timeB: Date, timeUnit: TimeUnit) -> Int {
+    public func calculateTimeGap(timeA: Date, timeB: Date, timeUnit: TimeUnit) -> Int {
         let calendar = NSCalendar.current
         var bigger = Date()
         var smaller = Date()
@@ -306,14 +306,14 @@ class TMCore {
         }
     }
     // 產生延遲
-    func makeDelay(second: Int, completion:@escaping ()->()) {
+    public func makeDelay(second: Int, completion:@escaping ()->()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(second), execute: {
             completion()
         })
     }
     
     // 取得現在年,月,日,時,分
-    func getNow(_ unit: TimeUnit) -> Int{
+    public func getNow(_ unit: TimeUnit) -> Int{
         let now = Date()
         let calendar = Calendar.current
         let components = (calendar as NSCalendar).components([.second ,.minute ,.hour ,.day , .month , .year], from: now)
@@ -335,7 +335,7 @@ class TMCore {
     }
     
     // 取得當下的用餐時段
-    func getNow() -> FNMealType {
+    public func getNow() -> FNMealType {
         let now = NSDate()
         let formatter = DateFormatter()
         formatter.dateFormat = "HH"
@@ -360,7 +360,7 @@ class TMCore {
     }
     
 // MARK: - UIViewController
-    func isPresented(_ vc: UIViewController) -> Bool {
+    public func isPresented(_ vc: UIViewController) -> Bool {
         let vcs = vc.navigationController?.viewControllers
         if ((vcs?.contains(vc)) == true) {
             return false
@@ -371,26 +371,26 @@ class TMCore {
     
 // MARK: - Alert
     // hint彈跳窗(內容)
-    func showAlert(vc: UIViewController, msg: String) {
+    public func showAlert(vc: UIViewController, msg: String) {
         let alert = UIAlertController(title: "hint".localized, message: msg, preferredStyle: .alert);
         vc.present(alert, animated: true, completion: nil)
     }
     // 彈跳窗(標題、內容、取消按鈕標題)
-    func showAlert(vc: UIViewController, title: String,msg: String, cancelBtnTitle: String) {
+    public func showAlert(vc: UIViewController, title: String,msg: String, cancelBtnTitle: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert);
         let cancelAction = UIAlertAction.init(title: cancelBtnTitle, style: .cancel, handler: {(action) in })
         alert.addAction(cancelAction)
         vc.present(alert, animated: true, completion: nil)
     }
     // error彈跳窗(錯誤訊息)
-    func showErrorAlert(vc: UIViewController, msg: String) {
+    public func showErrorAlert(vc: UIViewController, msg: String) {
         let alert = UIAlertController(title: "error".localized, message: msg, preferredStyle: .alert);
         vc.present(alert, animated: true, completion: nil)
     }
     
 // MARK: - AlertController
     // textfield彈跳窗(標題、內容、確認標題+功能)
-    func showAlertWithSingleTextField(_ title: String,msg: String, confirmBtnTitle: String, confirmBtnAction:@escaping (_ textField:UITextField)->()) -> (UIAlertController,UITextField) {
+    public func showAlertWithSingleTextField(_ title: String,msg: String, confirmBtnTitle: String, confirmBtnAction:@escaping (_ textField:UITextField)->()) -> (UIAlertController,UITextField) {
         var singleTextField = UITextField()
         let alertController = self.twoButtonAlertController(title, msg: msg, cancelAction:
             {
@@ -411,7 +411,7 @@ class TMCore {
     }
     
     // 彈跳窗(標題、內容、Cancel&OK按鈕功能)
-    func twoButtonAlertController(_ title: String, msg: String, cancelAction: @escaping ()->(), finishedAction: @escaping ()->()) -> UIAlertController {
+    public func twoButtonAlertController(_ title: String, msg: String, cancelAction: @escaping ()->(), finishedAction: @escaping ()->()) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         let finishedAction = UIAlertAction(title: "OK", style: .default) { (action) -> Void in
             finishedAction()
@@ -427,7 +427,7 @@ class TMCore {
         return alertController
     }
     // 彈跳紙(標題、內容、預設按鍵標題&功能)
-    func twoSelectWithCancelBtnAlertSheet(_ title: String, msg: String, destrutiveTitle: String, defaultTitle: String, destrutiveAction:@escaping ()->(), defaultAction:@escaping ()->()) -> UIAlertController {
+    public func twoSelectWithCancelBtnAlertSheet(_ title: String, msg: String, destrutiveTitle: String, defaultTitle: String, destrutiveAction:@escaping ()->(), defaultAction:@escaping ()->()) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: msg,
                                                 preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel, handler: nil)
@@ -448,7 +448,7 @@ class TMCore {
     
 // MARK: - TextField
     // 含標題
-    func textFieldWithLabel(_ textField: UITextField, placeholderText: String, labelTitle: String) -> UITextField {
+    public func textFieldWithLabel(_ textField: UITextField, placeholderText: String, labelTitle: String) -> UITextField {
         textField.placeholder = placeholderText
         let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 30))
         label.text = labelTitle
@@ -462,7 +462,7 @@ class TMCore {
     }
     
     // 鍵盤上加ToolBar與同步TextField
-    func addToolBar(textField: UITextField, syncTextField: inout UITextField){
+    public func addToolBar(textField: UITextField, syncTextField: inout UITextField){
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default
         toolBar.isTranslucent = true
@@ -486,7 +486,7 @@ class TMCore {
         textField.inputAccessoryView = toolBar
     }
 // MARK: - Label
-    func FNTableViewHeader(title: String, textColor: UIColor, backgroundColor: UIColor,font: UIFont, textAlignment: NSTextAlignment) -> UILabel {
+    public func FNTableViewHeader(title: String, textColor: UIColor, backgroundColor: UIColor,font: UIFont, textAlignment: NSTextAlignment) -> UILabel {
         let headerLbl = UILabel()
         headerLbl.text = title
         headerLbl.textAlignment = textAlignment
@@ -500,7 +500,7 @@ class TMCore {
     }
 // MARK: - Button
     // 含底線
-    func buttonWithUnderLine(_ button: UIButton) {
+    public func buttonWithUnderLine(_ button: UIButton) {
         let attrs = [NSUnderlineStyleAttributeName : 1]
         
         let attributedString = NSMutableAttributedString(string:"")
@@ -509,7 +509,7 @@ class TMCore {
         button.setAttributedTitle(attributedString, for: UIControlState())
     }
     
-    func addViewGesture(_ view: UIView,target: Any?, selector: Selector) {
+    public func addViewGesture(_ view: UIView,target: Any?, selector: Selector) {
         let tap = UITapGestureRecognizer(target: target, action: selector)
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(tap)
@@ -517,12 +517,12 @@ class TMCore {
     
 // MARK: - UserDefaults
     // 更新
-    func updateUserDefaultsForKey(_ key: String, value: AnyObject) {
+    public func updateUserDefaultsForKey(_ key: String, value: AnyObject) {
         UserDefaults.standard.setValue(value, forKey: key)
         UserDefaults.standard.synchronize()
     }
     // 取得
-    func getUserDefaultsValueForKey(_ key: String)->AnyObject {
+    public func getUserDefaultsValueForKey(_ key: String)->AnyObject {
         if UserDefaults.standard.value(forKey: key) != nil {
             return UserDefaults.standard.value(forKey: key)! as AnyObject
         }else {
@@ -530,32 +530,32 @@ class TMCore {
         }
     }
 // MARK: - 暫存 Temporary Data
-    func setTempData(data: Any, key: String) {
+    public func setTempData(data: Any, key: String) {
         TEMP_DATA.setValue(data, forKey: key)
     }
     
-    func getTempDate<T>(key: String) -> T? {
+    public func getTempDate<T>(key: String) -> T? {
         if let temp = TEMP_DATA.value(forKey: key) {
             return temp as? T
         }
         return nil
     }
     
-    func getTempData(key: String) -> Bool {
+    public func getTempData(key: String) -> Bool {
         if let temp = TEMP_DATA.value(forKey: key) {
             return temp as! Bool
         }
         return false
     }
     
-    func getTempData(key: String) -> NSMutableArray {
+    public func getTempData(key: String) -> NSMutableArray {
         if let temp = TEMP_DATA.value(forKey: key) {
             return temp as! NSMutableArray
         }
         return NSMutableArray.init()
     }
     
-    func getTempBoolData(key: String) -> Bool? {
+    public func getTempBoolData(key: String) -> Bool? {
         if let temp = TEMP_DATA.value(forKey: key) {
             return temp as? Bool
         }else {
@@ -563,47 +563,47 @@ class TMCore {
         }
     }
     
-    func getTempIntData(key: String) -> Int? {
+    public func getTempIntData(key: String) -> Int? {
         if let temp = TEMP_DATA.value(forKey: key) {
             return temp as? Int
         }
         return nil
     }
     
-    func getTempBoolArrayData(key: String) -> [Bool]? {
+    public func getTempBoolArrayData(key: String) -> [Bool]? {
         if let temp = TEMP_DATA.value(forKey: key) {
             return temp as? [Bool]
         }
         return nil
     }
     
-    func getTempTitleCheckArrayData(key: String) -> [(title: String, check: Bool)]? {
+    public func getTempTitleCheckArrayData(key: String) -> [(title: String, check: Bool)]? {
         if let temp = TEMP_DATA.value(forKey: key) {
             return temp as? [(title: String, check: Bool)]
         }
         return nil
     }
     
-    func getTempData(key: String) -> AnyObject? {
+    public func getTempData(key: String) -> AnyObject? {
         if let temp = TEMP_DATA.value(forKey: key) {
             return temp as AnyObject
         }
         return nil
     }
     
-    func removeTempData(key: String) {
+    public func removeTempData(key: String) {
         TEMP_DATA.removeObject(forKey: key)
     }
 // MARK: - 多工
     // 非同步(同時)多工
-    func createMultiTask(_ tasks: [()->()]) {
+    public func createMultiTask(_ tasks: [()->()]) {
         let globalQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.default)
         for task in tasks {
             globalQueue.async(execute: task)
         }
     }
     // Queue完成後執行
-    func createOperationQueue(_ tasks: [()->()], completion:@escaping ()->()) {
+    public func createOperationQueue(_ tasks: [()->()], completion:@escaping ()->()) {
         let operaionQ = OperationQueue()
         for i in 0 ..< tasks.count {
             let operation = BlockOperation(block: tasks[i])
@@ -617,7 +617,7 @@ class TMCore {
     
 // MARK: - Files
     // 讀取內容
-    func getText(filename: String, type: String) -> String {
+    public func getText(filename: String, type: String) -> String {
         var text = "Empty File" //just a text
         let path = Bundle.main.path(forResource:filename, ofType: type)
         if path == nil {
@@ -633,7 +633,7 @@ class TMCore {
     }
 // MARK: - 版本
     // 取得Version與Build字串
-    func version(includingEnvironment: Bool) -> (verionNum: String, buildNum: String, environment: String) {
+    public func version(includingEnvironment: Bool) -> (verionNum: String, buildNum: String, environment: String) {
         var version = ""
         var build = ""
         var environment = ""
@@ -655,7 +655,7 @@ class TMCore {
         }
         return (version, build, environment)
     }
-    func versionUpdate(_ appId: String, vc: UIViewController, success: @escaping ()->()) {
+    public func versionUpdate(_ appId: String, vc: UIViewController, success: @escaping ()->()) {
         if (NetworkingManager.sharedInstance.isConnected()) {
             self.checkVersionUpdate(appId, vc: vc, success: {success()})
             return
@@ -670,7 +670,7 @@ class TMCore {
     ///   - appId: 利用APP ID去APP Store取得最新版號
     ///   - vc: 當前viewcontroller
     ///   - success: 成功後回傳block
-    func checkVersionUpdate(_ appId: String,vc: UIViewController, success: @escaping ()->()) {
+    public func checkVersionUpdate(_ appId: String,vc: UIViewController, success: @escaping ()->()) {
         if !((Reachability()?.isReachable)!) {
             success()
             return
@@ -790,7 +790,7 @@ class TMCore {
         task.resume()
     }
     
-    func deltaWithNow(_ date: Date) -> DateComponents {
+    public func deltaWithNow(_ date: Date) -> DateComponents {
         let calendar = Calendar.current
         let now = Date()
         return calendar.dateComponents([.hour ,.minute ,.second], from: date, to: now)

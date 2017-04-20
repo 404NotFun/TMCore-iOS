@@ -9,7 +9,7 @@
 import Foundation
 
 // 列舉
-enum TimeUnit {
+public enum TimeUnit {
     case year
     case month
     case day
@@ -18,7 +18,7 @@ enum TimeUnit {
     case second
 }
 
-enum FNMealType: Int {
+public enum FNMealType: Int {
     case Breakfast = 0
     case Lunch
     case TeaTime
@@ -27,13 +27,13 @@ enum FNMealType: Int {
 }
 
 // 訊息發送端
-enum FNMsgType: Int {
+public enum FNMsgType: Int {
     case Local = 0
     case Remote
     case Other
 }
 
-enum VersionUpdateType: Int {
+public enum VersionUpdateType: Int {
     case notNeed = 0
     case selectedUpdate
     case forcedUpdate
