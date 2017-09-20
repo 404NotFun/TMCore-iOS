@@ -8,7 +8,7 @@
 
 import Foundation
 import SystemConfiguration
-import SVProgressHUD
+//import SVProgressHUD
 
 public class NetworkingManager {
     public static let sharedInstance = NetworkingManager()
@@ -18,13 +18,13 @@ public class NetworkingManager {
     }
     
     // 連線狀態下促發的功能
-    public func connectedNetworking(action: @escaping()->()) {
+    public func connectedNetworking(action: @escaping()->(), disconnected: @escaping()->()) {
         let reachability = Reachability()!
         URLCache.shared.removeAllCachedResponses()
         if (reachability.isReachable) {
             action()
         }else {
-            SVProgressHUD.dismiss()
+            disconnected()
             self.alert()
         }
     }

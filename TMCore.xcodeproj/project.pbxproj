@@ -31,7 +31,6 @@
 		3CBC0F8B1EA7D39500454B8B /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F791EA7D39500454B8B /* SCLAlertView.swift */; };
 		3CBC0F8C1EA7D39500454B8B /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F7A1EA7D39500454B8B /* SCLExtensions.swift */; };
 		3CBC0F8D1EA7D39500454B8B /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC0F7C1EA7D39500454B8B /* SweetAlert.swift */; };
-		3CBC0FA81EA7D54D00454B8B /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBC0FA71EA7D54D00454B8B /* SVProgressHUD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CBC0FA81EA7D54D00454B8B /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
